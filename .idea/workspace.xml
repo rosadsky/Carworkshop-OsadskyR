@@ -61,11 +61,52 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606939616886</updated>
-      <workItem from="1606939619389" duration="122000" />
+      <workItem from="1606939619389" duration="1453000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-912" y="-188" width="723" height="560" key="#com.intellij.ide.util.MemberChooser" timestamp="1606940873674">
+      <screen x="-1920" y="-373" width="1920" height="994" />
+    </state>
+    <state x="-912" y="-188" width="723" height="560" key="#com.intellij.ide.util.MemberChooser/0.25.1440.875/-1920.-373.1920.994@-1920.-373.1920.994" timestamp="1606940873674" />
+    <state width="1878" height="264" key="GridCell.Tab.0.bottom" timestamp="1606941027572">
+      <screen x="-1920" y="-373" width="1920" height="994" />
+    </state>
+    <state width="1878" height="264" key="GridCell.Tab.0.bottom/0.25.1440.875/-1920.-373.1920.994@-1920.-373.1920.994" timestamp="1606941027572" />
+    <state width="1878" height="264" key="GridCell.Tab.0.center" timestamp="1606941027571">
+      <screen x="-1920" y="-373" width="1920" height="994" />
+    </state>
+    <state width="1878" height="264" key="GridCell.Tab.0.center/0.25.1440.875/-1920.-373.1920.994@-1920.-373.1920.994" timestamp="1606941027571" />
+    <state width="1878" height="264" key="GridCell.Tab.0.left" timestamp="1606941027570">
+      <screen x="-1920" y="-373" width="1920" height="994" />
+    </state>
+    <state width="1878" height="264" key="GridCell.Tab.0.left/0.25.1440.875/-1920.-373.1920.994@-1920.-373.1920.994" timestamp="1606941027570" />
+    <state width="1878" height="264" key="GridCell.Tab.0.right" timestamp="1606941027571">
+      <screen x="-1920" y="-373" width="1920" height="994" />
+    </state>
+    <state width="1878" height="264" key="GridCell.Tab.0.right/0.25.1440.875/-1920.-373.1920.994@-1920.-373.1920.994" timestamp="1606941027571" />
+    <state x="-1372" y="-134" key="IDE.errors.dialog" timestamp="1606939793175">
+      <screen x="-1920" y="-373" width="1920" height="994" />
+    </state>
+    <state x="-1372" y="-134" key="IDE.errors.dialog/0.25.1440.875/-1920.-373.1920.994@-1920.-373.1920.994" timestamp="1606939793175" />
+    <state x="-1176" y="-111" key="refactoring.ChangeSignatureDialog" timestamp="1606940682001">
+      <screen x="-1920" y="-373" width="1920" height="994" />
+    </state>
+    <state x="-1176" y="-111" key="refactoring.ChangeSignatureDialog/0.25.1440.875/-1920.-373.1920.994@-1920.-373.1920.994" timestamp="1606940682001" />
   </component>
 </project>

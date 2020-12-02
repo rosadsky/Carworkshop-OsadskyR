@@ -21,6 +21,7 @@ public class ManagerServisu {
         this.CarWorkshop.InitialazeCarWorkshop();
         CreateArrayOfServices();
         CreateArrayOfExtraServices();
+
     }
 
 
