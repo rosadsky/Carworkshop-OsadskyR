@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Auto.Car;
+import WarehouseOfParts.WarehouseOfParts;
+import WarehouseOfParts.Engine;
 import Auto.Part;
 
 import org.w3c.dom.ls.LSOutput;
@@ -17,6 +19,7 @@ public class CarWorkshop {
     private String name;
     private ArrayList<Mechanic> ListOfMechanics;
     private ArrayList<Car> ListOfCars;
+    private ArrayList<WarehouseOfParts>WarehouseOfPartsArray;
 
 
 
@@ -53,6 +56,9 @@ public class CarWorkshop {
         DefultCars();
         DefaultMechanics();
         Car.InitialazeCarPart();
+        WarehouseOfPartsArray = new ArrayList<WarehouseOfParts>();
+
+
     }
 
     //default cars
@@ -68,8 +74,14 @@ public class CarWorkshop {
         ListOfMechanics.add(new Mechanic("Jano Pastor",1991,"Electric"));
         ListOfMechanics.add(new Mechanic("Roman Osadsky",1992,"Engine"));
         ListOfMechanics.add(new Mechanic("Lubos Smolar",1991,"Other"));
+    }
+    //  String name, String category, int partid, int quantity, int time, double warranty, boolean isReadyToRepair, int stavDielu) {
+    private void DefaultListOfWarehouseParts(){
+        WarehouseOfPartsArray.add(new Engine("part1","Electric",12,2,0,2,true,1) );
 
     }
+
+
 
     //Show all mechanics from array
 

@@ -21,10 +21,6 @@ public class Part {
 
     };
 
-    public void FindProblemPart(){
-
-
-    }
 
 
     public int getPartID() {
