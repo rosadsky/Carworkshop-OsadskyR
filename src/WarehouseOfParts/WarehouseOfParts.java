@@ -16,7 +16,6 @@ public class WarehouseOfParts extends Part {
 
 
     public void FindProblemPart(){
-        System.out.println("TEST GITHUB");
 
 
     }
