@@ -38,10 +38,10 @@ public class Car {
     //default Parts
 
     private static void DefultParts(){
-        ListOfParts.add(new Part("light","Electric",1));
-        ListOfParts.add(new Part("part1","Electric",2));
-        ListOfParts.add(new Part("part2","Electric",3));
-        ListOfParts.add(new Part("part3","Electric",4));
+        ListOfParts.add(new Part("baterry","Electric",1));
+        ListOfParts.add(new Part("light","Electric",2));
+        ListOfParts.add(new Part("radio","Electric",3));
+        ListOfParts.add(new Part("stereo","Electric",4));
         ListOfParts.add(new Part("part4","Engine",5));
         ListOfParts.add(new Part("part5","Engine",6));
         ListOfParts.add(new Part("part6","Engine",7));
@@ -82,12 +82,7 @@ public class Car {
     };
 
 
-    public void SolveProblem(String nameOfPart){
-        System.out.println("Solving problem...");
 
-
-
-    }
 
 }
 

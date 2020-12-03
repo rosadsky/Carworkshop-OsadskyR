@@ -66,7 +66,11 @@ public class ManagerServisu {
 
         FreeMechanic.setWorking(true);
         RepairCostAdder = Auto.Car.FindProblemPart(12,CarToRepair.problem);
-        Car.SolveProblem(RepairCostAdder.getNameOfPart());
+        if(CarWorkshop.SolveProblem(RepairCostAdder.getNameOfPart())){
+            FreeMechanic.setWorking(false);
+            this.CarWorkshop.LeaveGarage(CarToRepair.brandName,CarToRepair.dateOfMade);
+
+        }
 
     }
 

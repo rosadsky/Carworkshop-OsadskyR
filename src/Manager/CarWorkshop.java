@@ -8,11 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Auto.Car;
+import Auto.Part;
 import WarehouseOfParts.WarehouseOfParts;
 import WarehouseOfParts.Engine;
 import WarehouseOfParts.Other;
 import WarehouseOfParts.Electronic;
-import Auto.Part;
+
 
 import org.w3c.dom.ls.LSOutput;
 
@@ -80,22 +81,22 @@ public class CarWorkshop {
     }
     //  String name, String category, int partid, int quantity, int time, double warranty, boolean isReadyToRepair, int stavDielu) {
     private void DefaultListOfWarehouseParts(){
-        WarehouseOfPartsArray.add(new Electronic("part1-1","Electric",13,2,12,2,true,true) );
-        WarehouseOfPartsArray.add(new Electronic("part2-2","Electric",14,2,5,2,true,true) );
-        WarehouseOfPartsArray.add(new Electronic("part3","Electric",15,0,7,2,true,false) );
-        WarehouseOfPartsArray.add(new Engine("part4","Engine",16,1,8,2,true,1) );
-        WarehouseOfPartsArray.add(new Engine("part5","Engine",17,1,9,1.5,true,1) );
-        WarehouseOfPartsArray.add(new Engine("part6","Engine",18,1,9,1,true,1) );
-        WarehouseOfPartsArray.add(new Other("part7","Engine",18,1,9,1,true,12) );
-        WarehouseOfPartsArray.add(new Other("part8","Engine",18,2,9,1,true,13) );
-        WarehouseOfPartsArray.add(new Other("part9","Engine",18,3,9,1,true,14) );
+        WarehouseOfPartsArray.add(new Electronic("baterry","Electric",13,2,12,2,true,true) );
+        WarehouseOfPartsArray.add(new Electronic("light","Electric",14,2,5,2,true,true) );
+        WarehouseOfPartsArray.add(new Electronic("radio","Electric",15,0,7,2,true,false) );
+        WarehouseOfPartsArray.add(new Engine("starter","Engine",16,1,8,2,true,1) );
+        WarehouseOfPartsArray.add(new Engine("turbo","Engine",17,1,9,1.5,true,1) );
+        WarehouseOfPartsArray.add(new Engine("piston","Engine",18,1,9,1,true,1) );
+        WarehouseOfPartsArray.add(new Other("glass","Other",19,1,9,1,true,12) );
+        WarehouseOfPartsArray.add(new Other("wipers","Other",20,2,9,1,true,13) );
+        WarehouseOfPartsArray.add(new Other("seat","Other",21,3,9,1,true,14) );
     }
 
 
     public void ShowListOfWarehouseParts(){
-        System.out.println("DOSTUPNE DIELY");
+        System.out.println("WAREHOUSE PARTS:");
         for (WarehouseOfParts wareTmp : WarehouseOfPartsArray){
-            System.out.println("NAZOV:" + wareTmp.getNameOfPart());
+            System.out.println("  QTY: [" + wareTmp.getQuantity() + "] of " + wareTmp.getNameOfPart()  );
         }
     }
 
@@ -133,6 +134,18 @@ public class CarWorkshop {
         return null;
     }
 
+
+    public void LeaveGarage(String name, int yearOfMade) {
+        for (Car carTmp : ListOfCars) {
+            if(carTmp.brandName.equals(name)){
+                System.out.println(carTmp.brandName + " just leave garage...");
+                ListOfCars.remove(carTmp);
+
+            }
+        }
+
+    }
+
     /*
     Find best mechanic with specialization for car problem.
     -if there is no free mechanic for this problem system pick first free mechanic
@@ -153,6 +166,29 @@ public class CarWorkshop {
 
         return null;
     }
+
+    public boolean SolveProblem(String nameOfPart){
+        int quantity;
+        System.out.println("Solving problem [10%]");
+        for (WarehouseOfParts warehTmp : WarehouseOfPartsArray){
+            if(warehTmp.getNameOfPart().equals(nameOfPart)){
+                System.out.println("Solving problem [40%]");
+                if (warehTmp.getQuantity()>0){
+                    System.out.println("Solving problem [80%]");
+                    quantity = warehTmp.getQuantity();
+                    warehTmp.setQuantity(quantity-1);
+                    return true;
+                } else {
+                    System.out.println("PART IS NOT IN WAREHOUSE");
+                }
+
+            }
+        }
+        return false;
+    }
+
+
+
 
 
     public String getName() {
