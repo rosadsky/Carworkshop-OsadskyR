@@ -1,9 +1,11 @@
 package ExtraSluzba;
 
 interface RemoveTireFromWarehouse {
-    public void FullHouse(); // interface method (does not have a body)
+    public void FullHouse();
     public void TiresAreIn();
+    public void CheckCapacity();
 }
+
 
 
 public class WarehouseOfTires implements RemoveTireFromWarehouse {
@@ -12,10 +14,16 @@ public class WarehouseOfTires implements RemoveTireFromWarehouse {
     public WarehouseOfTires(int capacity) {
         Capacity = capacity;
         System.out.println("Warehouse of Tires is avaiable");
+
+    }
+
+    public void CheckCapacity(){
+
+
     }
 
     public void FullHouse() {
-        // The body of animalSound() is provided here
+        if(Capacity < 50);
         System.out.println("Sorry, we cannot store your tires :(");
     }
     public void TiresAreIn() {
