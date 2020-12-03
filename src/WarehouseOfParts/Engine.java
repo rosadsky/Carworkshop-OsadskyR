@@ -6,5 +6,7 @@ public class Engine extends WarehouseOfParts  {
     public Engine(String name, String category, int partid, int quantity, int time, double warranty, boolean isReadyToRepair, int stavDielu) {
         super(name, category, partid, quantity, time, warranty, isReadyToRepair);
         this.stavDielu = stavDielu;
+
+        System.out.println("Engine part added to WhList...");
     }
 }

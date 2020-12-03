@@ -10,6 +10,8 @@ import java.util.List;
 import Auto.Car;
 import WarehouseOfParts.WarehouseOfParts;
 import WarehouseOfParts.Engine;
+import WarehouseOfParts.Other;
+import WarehouseOfParts.Electronic;
 import Auto.Part;
 
 import org.w3c.dom.ls.LSOutput;
@@ -57,6 +59,7 @@ public class CarWorkshop {
         DefaultMechanics();
         Car.InitialazeCarPart();
         WarehouseOfPartsArray = new ArrayList<WarehouseOfParts>();
+        DefaultListOfWarehouseParts();
 
 
     }
@@ -77,10 +80,24 @@ public class CarWorkshop {
     }
     //  String name, String category, int partid, int quantity, int time, double warranty, boolean isReadyToRepair, int stavDielu) {
     private void DefaultListOfWarehouseParts(){
-        WarehouseOfPartsArray.add(new Engine("part1","Electric",12,2,0,2,true,1) );
-
+        WarehouseOfPartsArray.add(new Electronic("part1-1","Electric",13,2,12,2,true,true) );
+        WarehouseOfPartsArray.add(new Electronic("part2-2","Electric",14,2,5,2,true,true) );
+        WarehouseOfPartsArray.add(new Electronic("part3","Electric",15,0,7,2,true,false) );
+        WarehouseOfPartsArray.add(new Engine("part4","Engine",16,1,8,2,true,1) );
+        WarehouseOfPartsArray.add(new Engine("part5","Engine",17,1,9,1.5,true,1) );
+        WarehouseOfPartsArray.add(new Engine("part6","Engine",18,1,9,1,true,1) );
+        WarehouseOfPartsArray.add(new Other("part7","Engine",18,1,9,1,true,12) );
+        WarehouseOfPartsArray.add(new Other("part8","Engine",18,2,9,1,true,13) );
+        WarehouseOfPartsArray.add(new Other("part9","Engine",18,3,9,1,true,14) );
     }
 
+
+    public void ShowListOfWarehouseParts(){
+        System.out.println("DOSTUPNE DIELY");
+        for (WarehouseOfParts wareTmp : WarehouseOfPartsArray){
+            System.out.println("NAZOV:" + wareTmp.getNameOfPart());
+        }
+    }
 
 
     //Show all mechanics from array

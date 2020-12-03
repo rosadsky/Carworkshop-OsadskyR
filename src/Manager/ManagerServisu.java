@@ -2,6 +2,7 @@ package Manager;
 
 import java.util.ArrayList;
 import Auto.Car;
+import Auto.Part;
 import ExtraSluzba.ExtraService;
 
 public class ManagerServisu {
@@ -10,7 +11,8 @@ public class ManagerServisu {
     private ArrayList<RepairService> ListOfServices;
     private ArrayList<ExtraService> ListOfExtraServices;
     private CommandLine InterpreterService;
-    private int RepairCostAdder;
+    private Part RepairCostAdder;
+    private Car Car;
 
     private void InitializeSystem(){
         final int MAXLIFTS = 6;
@@ -63,8 +65,8 @@ public class ManagerServisu {
         System.out.println(FreeMechanic.getName() + " is working on " + CarToRepair.brandName + " Minimum price: |" + HowMuchRepairCost(CarToRepair.problem)+ "|");
 
         FreeMechanic.setWorking(true);
-        RepairCostAdder = Car.FindProblemPart(12,CarToRepair.problem);
-
+        RepairCostAdder = Auto.Car.FindProblemPart(12,CarToRepair.problem);
+        Car.SolveProblem(RepairCostAdder.getNameOfPart());
 
     }
 

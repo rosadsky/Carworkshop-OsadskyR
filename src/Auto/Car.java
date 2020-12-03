@@ -1,6 +1,7 @@
 package Auto;
 
 import java.util.ArrayList;
+import WarehouseOfParts.WarehouseOfParts;
 
 public class Car {
     public String brandName;
@@ -10,6 +11,7 @@ public class Car {
     public String color;
     public String problem;
     private static ArrayList<Part> ListOfParts;
+    private WarehouseOfParts WarehouseOfParts;
 
 
     public Car(String brandName, int odometer, int kategoryOfCar, int dateOfMade, String color, String problem) {
@@ -58,7 +60,7 @@ public class Car {
     *  */
 
 
-    public static int FindProblemPart(int maximum, String problem){
+    public static Part FindProblemPart(int maximum, String problem){
         int randomNum;
         int counter = 0;
         String Problem = problem;
@@ -71,13 +73,21 @@ public class Car {
                 for (Part partTmp2 : ListOfParts) {
                     if (partTmp2.getPartID() == randomNum) {
                         System.out.println("Mechanic found a problem in " + partTmp2.getNameOfPart());
-                        return partTmp2.getPartID();
+                        return partTmp2;
                     }
                 }
             }
         }
-        return 1;
+        return null;
     };
+
+
+    public void SolveProblem(String nameOfPart){
+        System.out.println("Solving problem...");
+
+
+
+    }
 
 }
 

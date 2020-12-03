@@ -105,6 +105,11 @@ public class CommandLine {
             ManagerServisu.AddWorkToMechanic(carName,Integer.parseInt(carYear));
         }
 
+        if(command.equals("listparts")){
+            ManagerServisu.getCarWorkshop().ShowListOfWarehouseParts();
+        }
+
+
 
     }
 
