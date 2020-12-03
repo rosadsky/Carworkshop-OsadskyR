@@ -19,7 +19,14 @@ public class CommandLine {
     public void Run(){
         while (true){
             try {
-                System.out.println("Please insert command");
+                System.out.println("------------------------------ ");
+                System.out.println("|    Please insert command   | ");
+                System.out.println("| mechanicadd | listmechanic | ");
+                System.out.println("|    caradd   |    listcar   | ");
+                System.out.println("|   workadd   |   listparts  | ");
+                System.out.println("| extraservice|              |");
+                System.out.println("------------------------------ ");
+
                 String command = reader.readLine();
                 ExecuteCommand(command);
             } catch (IOException e) {
@@ -109,30 +116,35 @@ public class CommandLine {
             ManagerServisu.getCarWorkshop().ShowListOfWarehouseParts();
         }
 
-        if(command.equals("extraservice")){
+        if(command.equals("rentcar")){
             String commandExtra = " ";
             String carInWorkshop = " ";
 
-            System.out.println("Which type of service you want to your repair?");
-            System.out.println("choose: | rentcar | storetires");
+            System.out.println("Which car you want exchange: ");
             try {
-                commandExtra = reader.readLine();
-                System.out.println("Which car you want exchange: ");
                 carInWorkshop = reader.readLine();
 
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
-            if (commandExtra.equals("rentcar")){
-                int Kategory;
-                Kategory = ManagerServisu.getCarWorkshop().FindCategoryOfCar(carInWorkshop);
-                ManagerServisu.TakeBestCarForRent(Kategory);
+            int Kategory;
+            Kategory = ManagerServisu.getCarWorkshop().FindCategoryOfCar(carInWorkshop);
+            ManagerServisu.TakeBestCarForRent(Kategory);
+
+        }
+
+        if(command.equals("storetires")){
+            String tiresNumber;
+
+            System.out.println("How much tires you want to store ?  ");
+            try {
+                tiresNumber = reader.readLine();
+
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
-            if(commandExtra.equals("storetires")){
-
-            }
 
 
         }

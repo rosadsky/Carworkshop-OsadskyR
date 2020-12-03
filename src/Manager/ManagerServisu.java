@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import Auto.Car;
 import Auto.Part;
 import ExtraSluzba.CarForRent;
-import ExtraSluzba.ExtraService;
+import ExtraSluzba.WarehouseOfTires;
+import WarehouseOfParts.WarehouseOfParts;
 
 public class ManagerServisu {
 
@@ -13,13 +14,14 @@ public class ManagerServisu {
     private ArrayList<CarForRent> ListOfCarsForRent;
     private CommandLine InterpreterService;
     private Part RepairCostAdder;
-    private Car Car;
+    private WarehouseOfTires WarehouseOfTires;
 
     private void InitializeSystem(){
         final int MAXLIFTS = 6;
         this.CarWorkshop = new CarWorkshop("AUTOSERVIS OSADSKY", MAXLIFTS);
         ListOfServices = new ArrayList<RepairService>();
         ListOfCarsForRent = new ArrayList<CarForRent>();
+        this.WarehouseOfTires = new WarehouseOfTires(50);
         this.InterpreterService = new CommandLine(this);
         this.CarWorkshop.InitialazeCarWorkshop();
         CreateArrayOfServices();

@@ -182,8 +182,9 @@ public class CarWorkshop {
         return 0;
     }
 
+    /*--------- final metoda  ---------*/
 
-    public int FindCategoryOfCar(String name){
+    final int FindCategoryOfCar(String name){
         for (Car carTmp : ListOfCars) {
             if(carTmp.brandName.equals(name)){
                 return carTmp.kategoryOfCar;
