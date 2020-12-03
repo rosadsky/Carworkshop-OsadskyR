@@ -114,13 +114,14 @@ public class ManagerServisu {
         ListOfCarsForRent.add(new CarForRent("DACIA", 5000,2,2020,"red","None",true));
     }
 
-    public void TakeBestCarForRent(int carInWorkshop){
+    public CarForRent TakeBestCarForRent(int carInWorkshop){
 
         for(CarForRent carTmp : ListOfCarsForRent) {
             if(carTmp.kategoryOfCar == carInWorkshop){
                 if(carTmp.isReadyToRent()) {
                     System.out.println(carTmp.brandName + " in category " + carTmp.kategoryOfCar + " is ready to rent ! ");
-
+                    carTmp.setReadyToRent(false);
+                    return carTmp;
 
                 }
             }
@@ -132,14 +133,15 @@ public class ManagerServisu {
             if(carTmp.kategoryOfCar > carInWorkshop){
                 if(carTmp.isReadyToRent()) {
                     System.out.println(carTmp.brandName + " in category " + carTmp.kategoryOfCar + " is ready to rent ! ");
-
+                    carTmp.setReadyToRent(false);
+                    return carTmp;
                 }
             }
         }
 
         System.out.println("We dont have car in higher category :(");
 
-
+        return null;
     }
 
     public ArrayList<RepairService> getListOfServices() {
