@@ -109,6 +109,34 @@ public class CommandLine {
             ManagerServisu.getCarWorkshop().ShowListOfWarehouseParts();
         }
 
+        if(command.equals("extraservice")){
+            String commandExtra = " ";
+            String carInWorkshop = " ";
+
+            System.out.println("Which type of service you want to your repair?");
+            System.out.println("choose: | rentcar | storetires");
+            try {
+                commandExtra = reader.readLine();
+                System.out.println("Which car you want exchange: ");
+                carInWorkshop = reader.readLine();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            if (commandExtra.equals("rentcar")){
+                int Kategory;
+                Kategory = ManagerServisu.getCarWorkshop().FindCategoryOfCar(carInWorkshop);
+                ManagerServisu.TakeBestCarForRent(Kategory);
+            }
+
+            if(commandExtra.equals("storetires")){
+
+            }
+
+
+        }
+
 
 
     }

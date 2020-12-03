@@ -1,21 +1,12 @@
 package Manager;
 
-
-
-
-
 import java.util.ArrayList;
-import java.util.List;
 
 import Auto.Car;
-import Auto.Part;
 import WarehouseOfParts.WarehouseOfParts;
 import WarehouseOfParts.Engine;
 import WarehouseOfParts.Other;
 import WarehouseOfParts.Electronic;
-
-
-import org.w3c.dom.ls.LSOutput;
 
 
 public class CarWorkshop {
@@ -80,7 +71,7 @@ public class CarWorkshop {
         ListOfMechanics.add(new Mechanic("Lubos Smolar",1991,"Other"));
     }
 
-    
+
 
     private void DefaultListOfWarehouseParts(){
         WarehouseOfPartsArray.add(new Electronic("baterry","Electric",13,2,12,2,true,true));
@@ -144,7 +135,7 @@ public class CarWorkshop {
         for (Car carTmp : ListOfCars) {
             if(carTmp.brandName.equals(name)){
                 System.out.println(carTmp.brandName + " just leave garage...");
-               // ListOfCars.remove(carTmp);
+               // ListOfCars.remove(carTmp); opraviť to treba !!!!!
             }
         }
 
@@ -189,6 +180,16 @@ public class CarWorkshop {
             }
         }
         return 0;
+    }
+
+
+    public int FindCategoryOfCar(String name){
+        for (Car carTmp : ListOfCars) {
+            if(carTmp.brandName.equals(name)){
+                return carTmp.kategoryOfCar;
+            }
+        };
+        return 3;
     }
 
 

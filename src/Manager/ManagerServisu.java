@@ -3,13 +3,14 @@ package Manager;
 import java.util.ArrayList;
 import Auto.Car;
 import Auto.Part;
+import ExtraSluzba.CarForRent;
 import ExtraSluzba.ExtraService;
 
 public class ManagerServisu {
 
     private CarWorkshop CarWorkshop;
     private ArrayList<RepairService> ListOfServices;
-    private ArrayList<ExtraService> ListOfExtraServices;
+    private ArrayList<CarForRent> ListOfCarsForRent;
     private CommandLine InterpreterService;
     private Part RepairCostAdder;
     private Car Car;
@@ -18,11 +19,11 @@ public class ManagerServisu {
         final int MAXLIFTS = 6;
         this.CarWorkshop = new CarWorkshop("AUTOSERVIS OSADSKY", MAXLIFTS);
         ListOfServices = new ArrayList<RepairService>();
-        ListOfExtraServices = new ArrayList<ExtraService>();
+        ListOfCarsForRent = new ArrayList<CarForRent>();
         this.InterpreterService = new CommandLine(this);
         this.CarWorkshop.InitialazeCarWorkshop();
         CreateArrayOfServices();
-        CreateArrayOfExtraServices();
+        CreateArrayOfCarsForRent();
 
     }
 
@@ -106,9 +107,38 @@ public class ManagerServisu {
         ListOfServices.add(new RepairService("Other",10,17));
     }
 
-    private void CreateArrayOfExtraServices(){
-       ListOfExtraServices.add(new ExtraService(220,"CarRent"));
-       ListOfExtraServices.add(new ExtraService(150,"Tires"));
+
+    private void CreateArrayOfCarsForRent(){
+        ListOfCarsForRent.add(new CarForRent("AUDI", 196000,3,2002,"red","None",true));
+        ListOfCarsForRent.add(new CarForRent("HYUNDAI", 191000,2,2005,"red","None",true));
+        ListOfCarsForRent.add(new CarForRent("DACIA", 5000,2,2020,"red","None",true));
+    }
+
+    public void TakeBestCarForRent(int carInWorkshop){
+
+        for(CarForRent carTmp : ListOfCarsForRent) {
+            if(carTmp.kategoryOfCar == carInWorkshop){
+                if(carTmp.isReadyToRent()) {
+                    System.out.println(carTmp.brandName + " in category " + carTmp.kategoryOfCar + " is ready to rent ! ");
+
+
+                }
+            }
+        }
+
+        System.out.println("We dont have car in your category :(");
+
+        for(CarForRent carTmp : ListOfCarsForRent) {
+            if(carTmp.kategoryOfCar > carInWorkshop){
+                if(carTmp.isReadyToRent()) {
+                    System.out.println(carTmp.brandName + " in category " + carTmp.kategoryOfCar + " is ready to rent ! ");
+
+                }
+            }
+        }
+
+        System.out.println("We dont have car in higher category :(");
+
 
     }
 
