@@ -11,6 +11,7 @@ public class WarehouseOfParts extends Part {
     private double warranty;
     private boolean isReadyToRepair;
 
+
     public WarehouseOfParts(String name, String category, int partid, int quantity, int time, double warranty, boolean isReadyToRepair) {
         super(name, category, partid);
         this.quantity = quantity;
@@ -22,6 +23,10 @@ public class WarehouseOfParts extends Part {
     public void FindProblemPart(){
 
 
+    }
+
+    public int getTime() {
+        return time;
     }
     public int getQuantity() {
         return quantity;

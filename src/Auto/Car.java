@@ -35,21 +35,37 @@ public class Car {
 
 
 
-    //default Parts
 
+    /*
+    *   WarehouseOfPartsArray.add(new Electronic("baterry","Electric",13,2,12,2,true,true));
+        WarehouseOfPartsArray.add(new Electronic("light","Electric",14,2,5,2,true,true));
+        WarehouseOfPartsArray.add(new Electronic("radio","Electric",15,0,7,2,true,false));
+        WarehouseOfPartsArray.add(new Electronic("stereo","Electric",15,0,7,2,true,false));
+        WarehouseOfPartsArray.add(new Engine("starter","Engine",16,1,8,2,true,1));
+        WarehouseOfPartsArray.add(new Engine("turbo","Engine",17,1,9,1.5,true,1));
+        WarehouseOfPartsArray.add(new Engine("piston","Engine",18,1,9,1,true,1));
+        WarehouseOfPartsArray.add(new Engine("pump","Engine",18,1,9,1,true,1));
+        WarehouseOfPartsArray.add(new Other("glass","Other",19,1,9,1,true,12));
+        WarehouseOfPartsArray.add(new Other("wipers","Other",20,2,9,1,true,13));
+        WarehouseOfPartsArray.add(new Other("seat","Other",21,3,9,1,true,14));
+        WarehouseOfPartsArray.add(new Other("steeringwheel","Other",21,3,9,1,true,14));
+    *
+    *
+    * */
+    //default Parts
     private static void DefultParts(){
         ListOfParts.add(new Part("baterry","Electric",1));
         ListOfParts.add(new Part("light","Electric",2));
         ListOfParts.add(new Part("radio","Electric",3));
         ListOfParts.add(new Part("stereo","Electric",4));
-        ListOfParts.add(new Part("part4","Engine",5));
-        ListOfParts.add(new Part("part5","Engine",6));
-        ListOfParts.add(new Part("part6","Engine",7));
-        ListOfParts.add(new Part("part7","Engine",8));
-        ListOfParts.add(new Part("part8","Other",9));
-        ListOfParts.add(new Part("part9","Other",10));
-        ListOfParts.add(new Part("part10","Other",11));
-        ListOfParts.add(new Part("part11","Other",12));
+        ListOfParts.add(new Part("starter","Engine",5));
+        ListOfParts.add(new Part("turbo","Engine",6));
+        ListOfParts.add(new Part("piston","Engine",7));
+        ListOfParts.add(new Part("pump","Engine",8));
+        ListOfParts.add(new Part("glass","Other",9));
+        ListOfParts.add(new Part("wipers","Other",10));
+        ListOfParts.add(new Part("seat","Other",11));
+        ListOfParts.add(new Part("steeringwheel","Other",12));
     }
 
 

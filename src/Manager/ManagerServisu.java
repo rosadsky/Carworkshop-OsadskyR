@@ -58,6 +58,7 @@ public class ManagerServisu {
     public void AddWorkToMechanic(String name, int yearOfMade){
         Mechanic FreeMechanic;
         Car CarToRepair;
+        int PartTimeAdd;
 
         CarToRepair = this.CarWorkshop.FindCarToRepair(name,yearOfMade);
         FreeMechanic = this.CarWorkshop.FindFreeMechanic(CarToRepair);
@@ -66,10 +67,11 @@ public class ManagerServisu {
 
         FreeMechanic.setWorking(true);
         RepairCostAdder = Auto.Car.FindProblemPart(12,CarToRepair.problem);
-        if(CarWorkshop.SolveProblem(RepairCostAdder.getNameOfPart())){
+        PartTimeAdd = CarWorkshop.SolveProblem(RepairCostAdder.getNameOfPart());
+        if(PartTimeAdd > 0){
             FreeMechanic.setWorking(false);
+            System.out.println("Total Price of repair: " + HowMuchRepairCost(CarToRepair.problem, PartTimeAdd) );
             this.CarWorkshop.LeaveGarage(CarToRepair.brandName,CarToRepair.dateOfMade);
-
         }
 
     }
@@ -89,7 +91,7 @@ public class ManagerServisu {
      */
 
     public double HowMuchRepairCost(String name, int PartTimeAdd ) {
-        System.out.println("List Of Services");
+        System.out.println("Solving problem [100%]");
         for (RepairService repTmp : ListOfServices) {
             if(repTmp.getName().equals(name)){
                 return repTmp.getTimeOfRepair() * repTmp.getCostPerHour() + PartTimeAdd;
