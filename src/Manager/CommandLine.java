@@ -19,13 +19,10 @@ public class CommandLine {
     public void Run(){
         while (true){
             try {
-                System.out.println("------------------------------ ");
-                System.out.println("|    Please insert command   | ");
-                System.out.println("| mechanicadd | listmechanic | ");
-                System.out.println("|    caradd   |    listcar   | ");
-                System.out.println("|   workadd   |   listparts  | ");
-                System.out.println("| extraservice|              |");
-                System.out.println("------------------------------ ");
+                System.out.println("--------------|    Please insert command   |-------------- ");
+                System.out.println("| mechanicadd | listmechanic |   workadd   |   rentcar   |");
+                System.out.println("|    caradd   |    listcar   |  listparts  | storetires  |");
+                System.out.println("---------------------------------------------------------- ");
 
                 String command = reader.readLine();
                 ExecuteCommand(command);
@@ -140,6 +137,8 @@ public class CommandLine {
             System.out.println("How much tires you want to store ?  ");
             try {
                 tiresNumber = reader.readLine();
+                ManagerServisu.TiresIn(Integer.parseInt(tiresNumber));
+
 
             } catch (IOException e) {
                 e.printStackTrace();

@@ -15,13 +15,14 @@ public class ManagerServisu {
     private CommandLine InterpreterService;
     private Part RepairCostAdder;
     private WarehouseOfTires WarehouseOfTires;
+    private int CapacityTires = 50;
 
     private void InitializeSystem(){
         final int MAXLIFTS = 6;
         this.CarWorkshop = new CarWorkshop("AUTOSERVIS OSADSKY", MAXLIFTS);
         ListOfServices = new ArrayList<RepairService>();
         ListOfCarsForRent = new ArrayList<CarForRent>();
-        this.WarehouseOfTires = new WarehouseOfTires(50);
+        this.WarehouseOfTires = new WarehouseOfTires(CapacityTires);
         this.InterpreterService = new CommandLine(this);
         this.CarWorkshop.InitialazeCarWorkshop();
         CreateArrayOfServices();
@@ -144,6 +145,18 @@ public class ManagerServisu {
         System.out.println("We dont have car in higher category :(");
 
         return null;
+    }
+
+    public void TiresIn(int TiresQuantity){
+
+        if(WarehouseOfTires.getCapacity()-TiresQuantity >= 0) {
+            WarehouseOfTires.setCapacity((WarehouseOfTires.getCapacity() - TiresQuantity));
+            WarehouseOfTires.TiresAreIn();
+        } else {
+            WarehouseOfTires.FullHouse();
+        }
+        System.out.println("FREE CAPACITY: [" + WarehouseOfTires.getCapacity()+ "]");
+
     }
 
     public ArrayList<RepairService> getListOfServices() {
