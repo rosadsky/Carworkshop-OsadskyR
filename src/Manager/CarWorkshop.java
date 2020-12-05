@@ -11,15 +11,25 @@ import WarehouseOfParts.Electronic;
 
 public class CarWorkshop {
     private String name;
+    private int pocetZdvihakov;
     private ArrayList<Mechanic> ListOfMechanics;
     private ArrayList<Car> ListOfCars;
     private ArrayList<WarehouseOfParts>WarehouseOfPartsArray;
+    private static CarWorkshop instance = null;
 
+    /*--------- Single ton -------*/
 
-
-    public CarWorkshop(String name, int pocetZdvihakov) {
+    private CarWorkshop(String name, int pocetZdvihakov) {
         this.name = name;
+        this.pocetZdvihakov = pocetZdvihakov;
         System.out.println("Car workshop name: "+ this.name + " | Number of lifts: " + pocetZdvihakov);
+    }
+
+    public static CarWorkshop getInstance(String name, int pocetZdvihakov){
+        if(instance == null){
+            instance = new CarWorkshop(name,pocetZdvihakov);
+        }
+        return instance;
     }
 
     /*--------- Adding Mechanic-------*/

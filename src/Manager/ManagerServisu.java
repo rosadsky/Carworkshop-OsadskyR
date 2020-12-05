@@ -19,7 +19,7 @@ public class ManagerServisu {
 
     private void InitializeSystem(){
         final int MAXLIFTS = 6;
-        this.CarWorkshop = new CarWorkshop("AUTOSERVIS OSADSKY", MAXLIFTS);
+        this.CarWorkshop = Manager.CarWorkshop.getInstance("AUTOSERVIS OSADSKY", MAXLIFTS); // TU VYTVORIM OBJEKTÍK
         ListOfServices = new ArrayList<RepairService>();
         ListOfCarsForRent = new ArrayList<CarForRent>();
         this.WarehouseOfTires = new WarehouseOfTires(CapacityTires);

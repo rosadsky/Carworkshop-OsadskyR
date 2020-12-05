@@ -114,7 +114,6 @@ public class CommandLine {
         }
 
         if(command.equals("rentcar")){
-            String commandExtra = " ";
             String carInWorkshop = " ";
 
             System.out.println("Which car you want exchange: ");
