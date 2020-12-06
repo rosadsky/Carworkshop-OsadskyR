@@ -5,7 +5,6 @@ import Auto.Car;
 import Auto.Part;
 import ExtraSluzba.CarForRent;
 import ExtraSluzba.WarehouseOfTires;
-import WarehouseOfParts.WarehouseOfParts;
 
 public class ManagerServisu {
 
@@ -13,16 +12,17 @@ public class ManagerServisu {
     private ArrayList<RepairService> ListOfServices;
     private ArrayList<CarForRent> ListOfCarsForRent;
     private CommandLine InterpreterService;
-    private Part RepairCostAdder;
     private WarehouseOfTires WarehouseOfTires;
-    private int CapacityTires = 50;
+
+
 
     private void InitializeSystem(){
         final int MAXLIFTS = 6;
         this.CarWorkshop = Manager.CarWorkshop.getInstance("AUTOSERVIS OSADSKY", MAXLIFTS); // TU VYTVORIM OBJEKTÍK
         ListOfServices = new ArrayList<RepairService>();
         ListOfCarsForRent = new ArrayList<CarForRent>();
-        this.WarehouseOfTires = new WarehouseOfTires(CapacityTires);
+        int capacityTires = 50;
+        this.WarehouseOfTires = new WarehouseOfTires(capacityTires);
         this.InterpreterService = new CommandLine(this);
         this.CarWorkshop.InitialazeCarWorkshop();
         CreateArrayOfServices();
@@ -70,12 +70,17 @@ public class ManagerServisu {
         System.out.println(FreeMechanic.getName() + " is working on " + CarToRepair.brandName + " Minimum price: |" + HowMuchRepairCost(CarToRepair.problem)+ "|");
 
         FreeMechanic.setWorking(true);
-        RepairCostAdder = Auto.Car.FindProblemPart(12,CarToRepair.problem);
-        PartTimeAdd = CarWorkshop.SolveProblem(RepairCostAdder.getNameOfPart());
+        Part repairCostAdder = Auto.Car.FindProblemPart(12, CarToRepair.problem);
+        PartTimeAdd = CarWorkshop.SolveProblem(repairCostAdder.getNameOfPart());
         if(PartTimeAdd > 0){
             FreeMechanic.setWorking(false);
-            System.out.println("Total Price of repair: " + HowMuchRepairCost(CarToRepair.problem, PartTimeAdd) );
-            this.CarWorkshop.LeaveGarage(CarToRepair.brandName,CarToRepair.dateOfMade);
+            System.out.println("Total Price of repair: " + HowMuchRepairCost(CarToRepair.problem, PartTimeAdd));
+            CarToRepair.problem = "None";
+            System.out.println("CHECKING IF IS READY TO LEAVE");
+            if (CarToRepair.CarGetReadyForLeave(FreeMechanic.isWorking(),CarToRepair.problem,PartTimeAdd)){
+                this.CarWorkshop.LeaveGarage(CarToRepair.brandName,CarToRepair.dateOfMade);
+            }
+
         }
 
     }

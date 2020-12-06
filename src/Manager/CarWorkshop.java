@@ -61,6 +61,7 @@ public class CarWorkshop {
         DefaultMechanics();
         Car.InitialazeCarPart();
         WarehouseOfPartsArray = new ArrayList<WarehouseOfParts>();
+
         DefaultListOfWarehouseParts();
 
 

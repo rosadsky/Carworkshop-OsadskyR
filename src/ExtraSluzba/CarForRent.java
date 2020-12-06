@@ -19,6 +19,11 @@ public class CarForRent extends Car {
         this.isReadyToRent = isReadyToRent;
     }
 
+    public void CarGetReadyForLeave(String brandName, int odometer,boolean isReadyToRent,int kategoryOfCar){
+
+
+    }
+
 
 
 

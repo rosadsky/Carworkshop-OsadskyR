@@ -98,6 +98,12 @@ public class Car {
     };
 
 
+    public boolean CarGetReadyForLeave(boolean working, String problem, int partTimeAdd){
+        if (!working && problem.equals("None")&& partTimeAdd>0 ){
+            return true;
+        }
+        return false;
+    }
 
 
 }
