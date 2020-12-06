@@ -17,7 +17,6 @@ public class CarWorkshop extends Workshop {
     private ArrayList<WarehouseOfParts>WarehouseOfPartsArray;
     private static CarWorkshop instance = null;
 
-    /*--------- Single ton -------*/
 
     private CarWorkshop(String name, int pocetZdvihakov) {
         this.name = name;
