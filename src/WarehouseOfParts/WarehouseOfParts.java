@@ -20,11 +20,6 @@ public class WarehouseOfParts extends Part {
         this.isReadyToRepair = isReadyToRepair;
     }
 
-    public void RestockPart(){
-
-
-    }
-
     public int getTime() {
         return time;
     }
