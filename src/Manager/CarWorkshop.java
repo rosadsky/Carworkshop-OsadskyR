@@ -11,8 +11,7 @@ import WarehouseOfParts.Electronic;
 
 
 public class CarWorkshop extends Workshop {
-    private String name;
-    private int pocetZdvihakov;
+    private final String name;
     private ArrayList<Mechanic> ListOfMechanics;
     private ArrayList<Car> ListOfCars;
     private ArrayList<WarehouseOfParts>WarehouseOfPartsArray;
@@ -22,7 +21,6 @@ public class CarWorkshop extends Workshop {
 
     private CarWorkshop(String name, int pocetZdvihakov) {
         this.name = name;
-        this.pocetZdvihakov = pocetZdvihakov;
         System.out.println("Car workshop name: "+ this.name + " | Number of lifts: " + pocetZdvihakov);
     }
 

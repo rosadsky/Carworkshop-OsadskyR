@@ -1,10 +1,10 @@
 package Manager;
 
-import java.util.ArrayList;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Executable;
+
 
 public class CommandLine {
     public ManagerServisu ManagerServisu;

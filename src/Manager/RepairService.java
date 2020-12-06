@@ -2,9 +2,9 @@ package Manager;
 
 public class RepairService{
 
-    private String name;
-    private int TimeOfRepair;
-    private int CostPerHour;
+    private final String name;
+    private final int TimeOfRepair;
+    private final int CostPerHour;
 
 
 

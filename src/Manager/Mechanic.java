@@ -3,9 +3,9 @@ package Manager;
 import java.util.ArrayList;
 
 public class Mechanic {
-    private String name;
-    private int MechanicID;
-    private String Specialization;
+    private final String name;
+    private final int MechanicID;
+    private final String Specialization;
     private boolean isWorking = false;
 
 

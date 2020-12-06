@@ -1,9 +1,5 @@
 package Auto;
 
-import Manager.CarWorkshop;
-
-import java.util.ArrayList;
-
 public class Part {
     private String NameOfPart;
     private String Cetegory;
