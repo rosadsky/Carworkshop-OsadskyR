@@ -6,9 +6,7 @@ interface RemoveTireFromWarehouse {
 
 }
 
-
-
-public class WarehouseOfTires implements RemoveTireFromWarehouse {
+public class WarehouseOfTires implements RemoveTireFromWarehouse  {
     public int getCapacity() {
         return Capacity;
     }

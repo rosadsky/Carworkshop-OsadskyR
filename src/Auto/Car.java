@@ -53,7 +53,7 @@ public class Car {
     *
     * */
     //default Parts
-    private static void DefultParts(){
+    public static void DefultParts(){
         ListOfParts.add(new Part("baterry","Electric",1));
         ListOfParts.add(new Part("light","Electric",2));
         ListOfParts.add(new Part("radio","Electric",3));
@@ -97,6 +97,7 @@ public class Car {
         return null;
     };
 
+    /*--------- POLYMORFIZMUS ---------*/
 
     public boolean CarGetReadyForLeave(boolean working, String problem, int partTimeAdd){
         if (!working && problem.equals("None")&& partTimeAdd>0 ){
@@ -104,6 +105,8 @@ public class Car {
         }
         return false;
     }
+
+
 
 
 }

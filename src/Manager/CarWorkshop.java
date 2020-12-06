@@ -9,7 +9,8 @@ import WarehouseOfParts.Other;
 import WarehouseOfParts.Electronic;
 
 
-public class CarWorkshop {
+
+public class CarWorkshop extends Workshop {
     private String name;
     private int pocetZdvihakov;
     private ArrayList<Mechanic> ListOfMechanics;
@@ -32,20 +33,21 @@ public class CarWorkshop {
         return instance;
     }
 
-    /*--------- Adding Mechanic-------*/
+    /*--------- Adding Mechanic  -------*/
 
-    public void AddMechanic(Mechanic newMechanic){
+    @Override
+    void AddMechanic(Mechanic newMechanic) {
         this.ListOfMechanics.add(newMechanic);
         System.out.println("MECHANIC SUCCESFULLY ADDED...");
-
     }
 
-    /*--------- Adding car-------*/
+    /*--------- Adding car -------*/
 
-
-    public void AddCar(Car newCar){
+    @Override
+    void AddCar(Car newCar) {
         this.ListOfCars.add(newCar);
     }
+
 
     /*
     Initialize car workshop
@@ -219,4 +221,6 @@ public class CarWorkshop {
     public ArrayList<Car> getListOfCars() {
         return ListOfCars;
     }
+
+
 }

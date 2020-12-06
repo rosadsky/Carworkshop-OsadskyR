@@ -117,9 +117,9 @@ public class ManagerServisu {
 
 
     private void CreateArrayOfCarsForRent(){
-        ListOfCarsForRent.add(new CarForRent("AUDI", 196000,3,2002,"red","None",true));
-        ListOfCarsForRent.add(new CarForRent("HYUNDAI", 191000,2,2005,"red","None",true));
-        ListOfCarsForRent.add(new CarForRent("DACIA", 5000,2,2020,"red","None",true));
+        ListOfCarsForRent.add(new CarForRent("AUDI", 196000,3,2002,"red","None",true,true));
+        ListOfCarsForRent.add(new CarForRent("HYUNDAI", 191000,2,2005,"red","None",true,false));
+        ListOfCarsForRent.add(new CarForRent("DACIA", 5000,2,2020,"red","None",true,false));
     }
 
     public CarForRent TakeBestCarForRent(int carInWorkshop){
@@ -127,9 +127,12 @@ public class ManagerServisu {
         for(CarForRent carTmp : ListOfCarsForRent) {
             if(carTmp.kategoryOfCar == carInWorkshop){
                 if(carTmp.isReadyToRent()) {
-                    System.out.println(carTmp.brandName + " in category " + carTmp.kategoryOfCar + " is ready to rent ! ");
-                    carTmp.setReadyToRent(false);
-                    return carTmp;
+                    if (carTmp.CarGetReadyForLeave(carTmp.isReadyToRent(),carTmp.isClean(), carTmp.kategoryOfCar,carInWorkshop)){
+                        System.out.println(carTmp.brandName + " in category " + carTmp.kategoryOfCar + " is ready to rent ! ");
+                        carTmp.setReadyToRent(false);
+                        return carTmp;
+                    }
+
 
                 }
             }
