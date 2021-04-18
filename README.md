@@ -1,4 +1,4 @@
-# Autoservis system
+# Autoservis system :red_car:
 
 ### Semestralny projekt | Predmet:  Základy obejtovo orientovaného programovania
 
